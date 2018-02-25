@@ -11,7 +11,18 @@ export class HelloIonicPage {
     {name: 'タスク2'},
   ]
 
+  // input
+  task: string;
+
   constructor() {
 
   }
+
+  addTask() {
+    this.tasks.push({
+      name: this.task
+    });
+    this.task = '';
+  }
+
 }
