@@ -13,8 +13,15 @@
       <ion-item>
         <ion-label floating>タスク</ion-label>
 
+        <!--
+            ## ionic-tooltips ##
+            https://www.npmjs.com/package/ionic-tooltips
+            In addition to the above procedure, execute the command below.
+              $ npm i @angular/animations@latest
+       -->
         <ion-input type="text"
             [(ngModel)]="task"
+            tooltip="Require. minlength:3, maxlength:20" navTooltip
             name="task" required
             minlength="3" maxlength="20">
         </ion-input>
