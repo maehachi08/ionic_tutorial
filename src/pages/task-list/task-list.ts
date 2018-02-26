@@ -15,7 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TaskListPage {
 
+  tasks: {name: string}[] = [
+    { name: 'タスク1' },
+    { name: 'タスク2' },
+  ];
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  ionViewWillEnter() {
+    if(localStorage.getItem('tasks')){
+      this.tasks = JSON.parse(localStorage.getItem('tasks'))
+    }
   }
 
   ionViewDidLoad() {
